@@ -1,29 +1,28 @@
 # Claude Toolkit ⚡
 
-我的四个自建 AI 工具套件，由 Claude 设计并部署。
+Claude 设计并部署的 AI 效率工具套件。
 
-| 项目 | 仓库 | 用途 | 语言 |
-|------|------|------|------|
-| 🧠 **codex-memory** | [codex-memory](https://github.com/kevindurant735rocket-creator/codex-memory) | 超轻量持久记忆系统 | Python |
-| 🗺️ **context-compass** | [context-compass](https://github.com/kevindurant735rocket-creator/context-compass) | 代码库思维地图 | Node.js |
-| 🔁 **self-heal** | [self-heal](https://github.com/kevindurant735rocket-creator/self-heal) | 自主修复循环 | Python |
-| 🧪 **test-pilot** | [test-pilot](https://github.com/kevindurant735rocket-creator/test-pilot) | 智能测试生成 | Python |
+## 工具清单
 
-## 一键安装
+| 项目 | 用途 | 语言 |
+|------|------|------|
+| 🧠 **codex-memory** | 轻量持久记忆系统 (SQLite+FTS5) | Python |
+| 🗺️ **context-compass** | 代码库思维地图 | Node.js |
+| 🔁 **self-heal** | 自主修复循环 | Python |
+| 🧪 **test-pilot** | 智能测试生成器 | Python |
+| 🤖 **macctl** | macOS AI 自动化 + 批处理省 token | Node.js |
+| 💰 **token-saver** | LLM token 省流器: 压缩/去重/预算 | Node.js |
+
+## 安装
 
 ```bash
-# 全部安装
+# Python 工具
 for pkg in codex-memory self-heal test-pilot; do
   pip install "git+https://github.com/kevindurant735rocket-creator/${pkg}.git"
 done
 
-# context-compass (Node)
-npm install -g "https://github.com/kevindurant735rocket-creator/context-compass"
+# Node 工具
+for pkg in macctl token-saver context-compass; do
+  npm install -g "https://github.com/kevindurant735rocket-creator/${pkg}.git"
+done
 ```
-
-## 核心理念
-
-1. **本地优先** — 所有数据存本地 SQLite，不依赖云端
-2. **极简接口** — 每个工具一个命令，功能聚焦
-3. **低依赖** — 只用标准库 + SQLite/FTS5
-4. **高效压缩** — 记录 <200 字节，自动压缩旧数据
